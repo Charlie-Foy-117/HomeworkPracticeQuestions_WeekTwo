@@ -83,14 +83,15 @@ int main()
     */
 
     //problem four
-    
     srand(time(NULL));
-    int minScore = 10;
-    int maxScore = 500;
-    int score1 = RandScore(minScore, maxScore);
-    std::cout << "Score " << score1 << std::endl;
-    
-
+    for (size_t i = 0; i < 5; i++)
+    { 
+        int minScore = 10;
+        int maxScore = 500;
+        int score1 = RandScore(minScore, maxScore);
+        std::cout << "Score " << score1 << std::endl;
+    }
+  
     //problem five
     /*
     std::string addMore = "n";
