@@ -2,9 +2,7 @@
 //
 
 #include <iostream>
-#include <string>
-#include <stdlib.h>     
-#include <time.h>
+#include <string>    
 #include <vector>
 
 int RecAreaCalc()
@@ -20,13 +18,12 @@ int RecAreaCalc()
     return area;
 }
 
-int RandScore()
+int RandScore(int minScore, int maxScore)
 {
-    int score = 0;
-    srand(time(nullptr));
-    score = rand()/(RAND_MAX + 1u)/6;
+    int range = maxScore - minScore;
+    int result = minScore + rand() % range;
     
-    return score;
+    return result;
 }
 
 int main()
@@ -87,7 +84,11 @@ int main()
 
     //problem four
     
-    std::cout << RandScore() << std::endl;
+    srand(time(NULL));
+    int minScore = 10;
+    int maxScore = 500;
+    int score1 = RandScore(minScore, maxScore);
+    std::cout << "Score " << score1 << std::endl;
     
 
     //problem five
@@ -114,14 +115,3 @@ int main()
     }
     */
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
