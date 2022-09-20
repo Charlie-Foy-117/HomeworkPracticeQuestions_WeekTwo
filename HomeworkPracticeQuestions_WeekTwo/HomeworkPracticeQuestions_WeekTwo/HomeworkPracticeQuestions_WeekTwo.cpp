@@ -22,8 +22,10 @@ int RecAreaCalc()
 
 int RandScore()
 {
-    srand(time(NULL));
-    int score = rand() % 10000 ;
+    int score = 0;
+    srand(time(nullptr));
+    score = rand()/(RAND_MAX + 1u)/6;
+    
     return score;
 }
 
@@ -84,11 +86,12 @@ int main()
     */
 
     //problem four
-    /*
+    
     std::cout << RandScore() << std::endl;
-    */
+    
 
     //problem five
+    /*
     std::string addMore = "n";
     std::vector<std::string> playerNames;   
     do 
@@ -109,7 +112,7 @@ int main()
     {
         std::cout << playerNames[i] << std::endl;
     }
-
+    */
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
