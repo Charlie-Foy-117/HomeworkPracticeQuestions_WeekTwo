@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include <stdlib.h>     
+#include <time.h>
+#include <vector>
 
 int RecAreaCalc()
 {
@@ -19,7 +22,9 @@ int RecAreaCalc()
 
 int RandScore()
 {
-    
+    srand(time(NULL));
+    int score = rand() % 10000 ;
+    return score;
 }
 
 int main()
@@ -79,7 +84,31 @@ int main()
     */
 
     //problem four
+    /*
+    std::cout << RandScore() << std::endl;
+    */
 
+    //problem five
+    std::string addMore = "n";
+    std::vector<std::string> playerNames;   
+    do 
+    {
+        addMore = "n";
+        std::string nameInput;
+        
+        std::cout << "Please enter a players name" << std::endl;
+        std::cin >> nameInput;
+        playerNames.push_back(nameInput);
+        std::cout << "Would you like to enter another name y or n";
+        std::cin >> addMore;
+
+    } while (addMore == "y");
+
+    int vectorSize = playerNames.size();
+    for (size_t i = 0; i < vectorSize; i++)
+    {
+        std::cout << playerNames[i] << std::endl;
+    }
 
 }
 
